@@ -1,19 +1,36 @@
 var express = require('express');
-var srv = express();
-
 var test = require('oc_test');
 
-srv.get('/', function (req, res) {
-  res.send("Salut !");
+var main_app = express();
+
+main_app.get('/', function (req, res) {
+	
+	var content = '<a href="page_1">Page 1</a><br /> \
+	<a href="page_2">Page 2</a><br /> \
+	<a href="page_3">Page 3</a><br />'
+	
+	res.send(content);
+});
+
+main_app.get('/test', function (req, res) {
+	res.send("<h1>This should have been deployed automaticaly after I git push</h1></br>" + test.hello("Salut les bgees"));
 });
 
 
-srv.get('/test', function (req, res) {
-	res.send("<h1>This should have been deployed automaticaly after I git push</h1></br>" + test.hello());
+main_app.get('/page_1', function (req, res) {
+	res.end("<h2>" + test.hello('page_1') + "</h2>");
 });
 
-var port = process.env.PORT || 3000;
+main_app.get('/page_2', function (req, res) {
+	res.end("<h2>" + test.hello('page_2') + "</h2>");
+});
 
-srv.listen(port, function () {
-  console.log('Server running on port '+port);
+main_app.get('/page_3', function (req, res) {
+	res.end("<h2>" + test.hello('page_3') + "</h2>");
+});
+
+var port = process.env.PORT || 3000; /* process.env.PORT is pure heroku stuff I presume */
+
+main_app.listen(port, function () {
+	console.log('Server running on port '+port);
 });
