@@ -29,6 +29,12 @@ main_app.get('/page_3', function (req, res) {
 	res.end("<h2>" + test.hello('page_3') + "</h2>");
 });
 
+main_app.get("/custom/:user_choice", function (req, res) {
+	var body = "Choix de l\'utilisateur : " + test.hello(req.params.user_choice);
+
+	res.render('custom.ejs', {title: "Tu peux pas test", content: body});
+});
+
 var port = process.env.PORT || 3000; /* process.env.PORT is pure heroku stuff I presume */
 
 main_app.listen(port, function () {
