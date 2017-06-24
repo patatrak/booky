@@ -35,7 +35,7 @@ main_app.get("/custom/:user_choice", function (req, res) {
 	res.render('custom.ejs', {title: "Tu peux pas test", content: body});
 });
 
-var port = process.env.PORT || 3000; /* process.env.PORT is pure heroku stuff I presume */
+var port = process.env.PORT || 3000;
 
 main_app.listen(port, function () {
 	console.log('Server running on port '+port);
