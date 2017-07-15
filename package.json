@@ -6,6 +6,9 @@
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www"
   },
+  "engine": {
+    "node": "8.1.4"
+  },
   "repository" : {
 	"type": "git",
 	"url": "https://github.com/patatrak/iotlacasemate.git"
