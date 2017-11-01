@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Enter an ISBN<% if ( typeof isbn != "undefined" ){ %>: Choupette a écrit <%= isbn %><% } %>
+	 </h1>
+	 <form name="booklu" method="POST" action="/books/lookup">
+	 	<input type="text" name="isbn" 
+		<% if ( typeof isbn != "undefined" ){ %>
+			value="<%= isbn %>"
+		<% } %> >
+		<input type="submit" value="search">
+	 </form>
+  </body>
+</html>
+	
