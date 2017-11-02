@@ -5,8 +5,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Enter an ISBN<% if ( typeof isbn != "undefined" ){ %>: Choupette a écrit <%= isbn %><% } %>
-	 </h1>
+    <h1>Enter an ISBN</h1>
 	 <form name="booklu" method="POST" action="/books/lookup">
 	 	<input type="text" name="isbn" 
 		<% if ( typeof isbn != "undefined" ){ %>
@@ -14,6 +13,12 @@
 		<% } %> />
 		<input type="submit" value="search" />
 	 </form>
+	 <% if ( typeof bookTitle != "undefined" ){ %>
+	 <h2>Found a match: <%= bookTitle %></h2>
+	 <img src="<%= pic %>"/>
+	 <% } else { %>
+	 <h2>Book not found.</h2>
+	 <% } %>
   </body>
 </html>
 	
