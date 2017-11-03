@@ -3,14 +3,48 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+	 <style>
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: lightgrey;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent lightgrey transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+</style>
   </head>
   <body>
     <h1>Enter an ISBN</h1>
 	 <form name="booklu" method="POST" action="/books/lookup">
-	 	<input type="text" name="isbn" 
-		<% if ( typeof isbn != "undefined" ){ %>
-			value="<%= isbn %>"
-		<% } %> />
+		<input type="text" pattern="[0-9]{10,13}" name="isbn" size="13"  required 
+			<% if ( typeof isbn != "undefined" ){ %> value="<%= isbn %>" <% } %> />
+		<p class="tooltip">help<span class="tooltiptext">ISBN is a number from 10 to 13 digits</span></p>
 		<input type="submit" value="search" />
 	 </form>
 	 <% if ( typeof bookTitle != "undefined" ){ %>

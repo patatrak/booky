@@ -15,9 +15,9 @@ router.post('/lookup', function(req, res, next) {
   
 	isbn.resolve(req.body.isbn, function (err, book) {
 		if (err) {
-			debug('Book not found', err);
+			debug('Book not found');
 			res.render('books', {
-										title: `Book: {req.body.isbn}`, 
+										title: `No book found for ${req.body.isbn}`, 
 										isbn : req.body.isbn} );
 		} else {
 			debug(`Found: ${book.title}`);
