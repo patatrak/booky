@@ -15,9 +15,13 @@
 	 </form>
 	 <% if ( typeof bookTitle != "undefined" ){ %>
 	 <h2>Found a match: <%= bookTitle %></h2>
-	 <img src="<%= pic %>"/>
 	 <% } else { %>
 	 <h2>Book not found.</h2>
+	 <% } %>
+	 <% if ( typeof pic != "undefined" ) { %>
+	 <img src="<%= pic %>"/>
+	 <% } else { %>
+	 <h3>No picture available</h3>
 	 <% } %>
   </body>
 </html>

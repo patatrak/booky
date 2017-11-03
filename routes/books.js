@@ -21,11 +21,12 @@ router.post('/lookup', function(req, res, next) {
 										isbn : req.body.isbn} );
 		} else {
 			debug(`Found: ${book.title}`);
+			/*debug("Full json %j", book);*/
 			res.render('books', {
-										title		: `${book.title} by ${book.authors}`, 
+										title		: book.title, 
 										isbn		: req.body.isbn,
-										bookTitle: book.title,
-										pic		: book.imageLinks.thumbnail} );
+										bookTitle: `${book.title} by ${book.authors}`,
+										pic		: (typeof book.imageLinks != "undefined" ? book.imageLinks.thumbnail : undefined)} );
 		}
 	});
   
