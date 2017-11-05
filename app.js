@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var fibo  = require('./routes/fibo');
 var books = require('./routes/books');
 
 var debug = require('debug')('booky:main');
@@ -26,8 +25,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-
-app.use('/fibo', fibo);
 
 app.use('/books', books);
 app.use('/books/lookup', books); 
