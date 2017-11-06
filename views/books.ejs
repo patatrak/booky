@@ -41,7 +41,7 @@
   </head>
   <body>
     <h1>Enter an ISBN</h1>
-	 <form name="booklu" method="POST" action="/books/lookup">
+	 <form name="booklookup" method="get" action="/books/lookup">
 		<input type="text" pattern="[0-9]{10,13}" name="isbn" size="13"  required 
 			<% if ( typeof isbn != "undefined" ){ %> value="<%= isbn %>" <% } %> />
 		<p class="tooltip">help<span class="tooltiptext">ISBN is a number from 10 to 13 digits</span></p>

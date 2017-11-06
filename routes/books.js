@@ -10,21 +10,21 @@ router.get('/', function(req, res, next) {
   res.render('books', {	title: 'Lookging for a book'} );
 });
 
-router.post('/lookup', function(req, res, next) {
-  debug('ISBN to look for:' + req.body.isbn);
+router.get('/lookup', function(req, res, next) {
+  debug('ISBN to look for:' + req.query.isbn);
   
-	isbn.resolve(req.body.isbn, function (err, book) {
+	isbn.resolve(req.query.isbn, function (err, book) {
 		if (err) {
 			debug('Book not found');
 			res.render('books', {
 										title: `No book found for ${req.body.isbn}`, 
-										isbn : req.body.isbn} );
+										isbn : req.query.isbn} );
 		} else {
 			debug(`Found: ${book.title}`);
 			/*debug("Full json %j", book);*/
 			res.render('books', {
 										title		: book.title, 
-										isbn		: req.body.isbn,
+										isbn		: req.query.isbn,
 										bookTitle: `${book.title} by ${book.authors}`,
 										pic		: (typeof book.imageLinks != "undefined" ? book.imageLinks.thumbnail : undefined)} );
 		}
