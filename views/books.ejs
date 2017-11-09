@@ -47,16 +47,17 @@
 		<p class="tooltip">help<span class="tooltiptext">ISBN is a number from 10 to 13 digits</span></p>
 		<input type="submit" value="search" />
 	 </form>
+	 
+	 
 	 <% if ( typeof bookTitle != "undefined" ){ %>
-	 <h2>Found a match: <%= bookTitle %></h2>
-	 <% } else { %>
-	 <h2>Book not found.</h2>
+		<p>Found a match: <%= bookTitle %></p>
+		<% if ( typeof pic != "undefined" ) { %>
+			<img src="<%= pic %>"/>
+		<% } else { %>
+			<p>No picture available</p>
+		<% } %>
 	 <% } %>
-	 <% if ( typeof pic != "undefined" ) { %>
-	 <img src="<%= pic %>"/>
-	 <% } else { %>
-	 <h3>No picture available</h3>
-	 <% } %>
+	 
   </body>
 </html>
 	
