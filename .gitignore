@@ -1,3 +1,6 @@
+# private local script, name starting with _
+_start
+
 # Logs
 logs
 *.log
