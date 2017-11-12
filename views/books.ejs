@@ -49,13 +49,30 @@
 	 </form>
 	 
 	 
-	 <% if ( typeof bookTitle != "undefined" ){ %>
-		<p>Found a match: <%= bookTitle %></p>
-		<% if ( typeof pic != "undefined" ) { %>
-			<img src="<%= pic %>"/>
-		<% } else { %>
-			<p>No picture available</p>
+	 <% if ( typeof obj != "undefined" ){ %>
+		<p>Title: <%= obj.title %>, <%= obj.publishedDate %>, <%= obj.pageCount %> pages</p>
+		<p>Authors: <%= obj.authors %></p>
+		<p>Categories: 
+		<% if (typeof obj.categories != "undefined" ) {
+			for (i = 0; i < obj.categories.length; i++) { %>
+				<%= obj.categories[i] %>
+			<% }
+		} else { %> Not provided <% } %>
+		</p>
+		
+		<% if ( typeof obj.imageLinks != "undefined" ) { %>
+			<% if (typeof obj.imageLinks.thumbnail != "undefined" ) %>
+				<img src="<%= obj.imageLinks.thumbnail%>"><br>
+			<% if (typeof obj.imageLinks.smallThumbnail != "undefined" ) %>
+				<img src="<%= obj.imageLinks.smallThumbnail%>">
 		<% } %>
+		
+		<% if (typeof obj.industryIdentifiers != "undefined" ) {
+			for (i = 0; i < obj.industryIdentifiers.length; i++) { %>
+				<p><%= obj.industryIdentifiers[i].type %>: <%= obj.industryIdentifiers[i].identifier %></p>
+			<% }
+		} %>
+		
 	 <% } %>
 	 
   </body>
