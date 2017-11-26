@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
+/*var mgoose = require('mongoose');*/
+
 var index = require('./routes/index');
 var books = require('./routes/books');
 
@@ -12,6 +14,29 @@ var debug = require('debug')('booky:main');
 var app = express();
 
 app.disable('x-powered-by');
+
+/* 
+var options = {
+  useMongoClient: true,
+  autoIndex: false, // Don't build indexes
+  reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
+  reconnectInterval: 500, // Reconnect every 500ms
+  poolSize: 10, // Maintain up to 10 socket connections
+  // If not connected, return errors immediately rather than waiting for reconnect
+  bufferMaxEntries: 0
+};
+mgoose.connect(process.env.MLABOOKYURI, options );
+
+var db = mgoose.connection;
+db.on('error', () => {
+	debug('MongoDB connection error:');
+	});
+	
+db.on('connected', () => {
+	debug('MongoDB connected');
+	
+	});
+*/
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
