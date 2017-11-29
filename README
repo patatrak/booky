@@ -1,0 +1,12 @@
+TODO: make this file a real readme :D
+
+ISSUE: on ubuntu node vs. nodejs
+	https://stackoverflow.com/questions/21168141/cannot-install-packages-using-node-package-manager-in-ubuntu
+	
+FIX: optional package fevents. How to not trying to install it ?
+	exist only on MacOS
+	
+TODO: add documentation, built from sphinx
+
+TODO: find a isbn lib that works with french books. Try asking to "storit" team how they do it.
+	everything I tried are not really powerful and most of the time failed to find result
