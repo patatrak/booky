@@ -1,4 +1,4 @@
-# Booky: I'm learning nodejs parce que je le vaut bien
+# Booky: I'm learning nodejs parce que je le vaux bien
 
 This is a personal project with only one goal: learning nodejs.
 
