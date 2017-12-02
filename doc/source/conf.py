@@ -84,11 +84,26 @@ todo_include_todos = False
 #
 html_theme = 'classic'
 
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+	"stickysidebar": "true",
+	"sidebarbgcolor": "#FAFAFA",
+	"sidebartextcolor": "#212121",
+	"sidebarlinkcolor": "#FF3D00",
+	"relbarbgcolor": "#FF3D00",
+	"relbartextcolor": "#212121",
+	"relbarlinkcolor": "#212121",
+	"headbgcolor": "#FAFAFA",
+	"bgcolor": "#FAFAFA",
+	"headtextcolor": "#1A237E",
+	"textcolor": "black",
+	"linkcolor": "#FF3D00",
+	"visitedlinkcolor": "#DD2C00"
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
