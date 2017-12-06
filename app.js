@@ -11,6 +11,9 @@ var books = require('./routes/books');
 
 var debug = require('debug')('booky:main');
 
+var isbn = require('./libisbn');
+debug(isbn.isbn());
+
 var app = express();
 
 app.disable('x-powered-by');

@@ -1,0 +1,4 @@
+{
+    "name":   "minimalist isbn library",
+    "main":   "./isbn.js"
+}
