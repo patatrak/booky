@@ -10,8 +10,6 @@ Welcome to booky's documentation
    :maxdepth: 3
    :caption: Contents:
 
-
-
 Indices and tables
 ##################
 
@@ -20,17 +18,21 @@ Indices and tables
 What is booky?
 ##############
 
+Booky is my way of learning nodejs. It's just an app to handle books collection. Right now
+I don't do a lot since I have not the time to sped on it: given a isbn I try to find book information. That's all.
+But I have **A LOT OF IDEAS**\ .
+
 Building booky
 ##############
 
 What you need?
 ==============
-- nodejs: to code the app :)
-- sphinx: to build this documentation
+- ``nodejs``: to code the app :)
+- ``sphinx``: to build this documentation
 
 Where to build?
 ===============
-Everywhere nodejs exist you should be capable of building the app. I personnaly build on a Ubuntu 17.04.
+Everywhere ``nodejs`` exist you should be capable of building the app. I personnaly build on a Ubuntu 17.04.
 This document should be built also on Windows, if you installed Sphinx on it. But I didnt try and won't. It's up to you.
 
 Hosting and deployement
@@ -42,13 +44,19 @@ I suppose you can make your own choices.
 Database
 ========
 The app need a ``Mongodb`` database. I have mine hosted in a sandbox provided for free by ``mLab``.
-The app uses ``mongoose`` to interface to the db, and for obvious reasons the connection string is not hardcoded somewhere.
+The app uses ``mongoose`` to interface to the db, and for obvious reasons the connection string is not hardcoded in source code.
 For the app to works, you have to set your connection string as an exported environement variable, like this:
 
 .. code-block:: bash
 
 	export MLABOOKYURI=mongodb://<username>:<userpassord>@xxxxxx.mlab.com:yyyyyyy/<dbname>
 
+In javascript it's used thanks to the ``process`` object like this:
+
+.. code-block:: javascript
+
+	mgoose.connect(process.env.MLABOOKYURI, options );
+	
 Then you can run the app:
 
 .. code-block:: bash
