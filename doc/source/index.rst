@@ -78,7 +78,7 @@ as ``npm run dvstart``.
 
 .. code-block:: bash
 
-	ln -s /sur/bin/nodejs /usr/bin/node 
+	ln -s /usr/bin/nodejs /usr/bin/node 
 
 * More to read at `stackoverflow <https://stackoverflow.com/questions/21168141/cannot-install-packages-using-node-package-manager-in-ubuntu>`_
 
@@ -100,4 +100,4 @@ I'm a pretty good embedded firmware engineer with good experience in homebrewed 
 , really hated it back in the 90s, it was such a f****** piece of shit. I recently look at how we made web app this days, and found learning things like nodejs can worth it. So this app.
 And I have to admit it's cool.
 
-you can contact me at zepangolin@gmail.com 
+you can contact me at lpat@protonmail.com 
